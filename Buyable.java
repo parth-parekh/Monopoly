@@ -36,4 +36,8 @@ public class Buyable extends Location {
 		Owner = p.getName();
 	}
 
+	public void doAction(Player p) {
+		return;
+	}
+
 }

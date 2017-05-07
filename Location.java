@@ -1,5 +1,5 @@
 
-public class Location {
+public abstract class Location {
 	protected String name;
 	
 	public Location(String n) {
@@ -8,10 +8,7 @@ public class Location {
 	
 	public String getName() {
 		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	}	
 	
-	
+	public abstract void doAction(Player p);
 }

@@ -16,21 +16,18 @@ public class Player {
 	private boolean isBankrupt = false;
 	private int position = 0;
 	private boolean inJail;
+	private int inJailTurns;
 
 	
 	public Player(String name) {
 		this.name = name;
 	}
 	
-	public void addMoney(int value) {
+	public void changeMoney(int value) {
 		money += value;
 		System.out.println(name + " now has $" + money);
 	}
 	
-	public void removeMoney(int value) {
-		money -= value;
-		System.out.println(name + " now has $" + money);
-	}
 	public int getMoney() {
 		return money;
 	}
@@ -45,5 +42,17 @@ public class Player {
 	
 	public void getPlayerInformation() {
 		System.out.println("Player: " + name + " has $" + money + " and owns " + property.toString());
+	}
+	
+	public void goToJail() {
+		inJail = true;
+	}
+	
+	public void inJail() {
+		if(inJailTurns == 2) {
+			inJail = false;
+		} else {
+			inJailTurns++;
+		}
 	}
 }
