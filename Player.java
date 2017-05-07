@@ -15,6 +15,7 @@ public class Player {
 	private ArrayList <Property> property = new ArrayList <Property> ();
 	private boolean isBankrupt = false;
 	private int position = 0;
+	private boolean inJail;
 
 	
 	public Player(String name) {

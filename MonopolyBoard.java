@@ -16,7 +16,9 @@ public class MonopolyBoard {
 		dice = new Dice();
 	}
 	
-	public void move();
+	public void move() {
+	
+	}
 	
 	
 }

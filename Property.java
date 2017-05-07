@@ -5,26 +5,16 @@
  * @author Parth Parekh
  *
  */
-public class Property extends Location{
+public class Property extends Buyable{
 	private int houses;
 	private int hotel;
 	
 	public Property(String n, int c) {
-		name = n;
-		cost = c;
+		super(n, c);
 		rent = cost/10 - 4;
-		isOwned = false;
-		}
-	
-	public int getRent() {
-		return rent;
 	}
 	
-	public boolean isOwned() {
-		return isOwned;
-	}
 	
-	/**
 	public String addHouse() {
 		if(houses == 4) {
 			if(hotel == 1) {
@@ -32,12 +22,13 @@ public class Property extends Location{
 			} else {
 				hotel = 1;
 				houses = 0;
+				rent *= 3;
 				return "You upgraded your houses on " + name + " to a hotel!";
 			}
 		}else {
 			houses += 1;
+			rent *= 2;
 			return "You have successfully built a house on " + name + "!";
 		}
 	}
-	**/
 }
