@@ -1,24 +1,23 @@
 /**
- * @author Matthew Guo
- * Dice class that rolls two dice to get a random integer value
- */
+* Class that represents a role of two dice that will tell the user
+* how many spaces to move
+*/
 public class Dice {
-	 public int die1;
-     public int die2;
-     
      /**
-     * Constructor that displays roll results
+     * Value of the first die 
      */
-    public Dice() {
-         System.out.println("You rolled a " + die1 + " and a " + die2);
-     }
-     
+     public int die1 = 0;
      /**
-     * Rolls two dice and sets the values to die1 and die2
+     * Value of the second die
      */
-    public void roll() {
+     public int die2 = 0;
+     /**
+     * Method that simulates one  and generates
+     * a number 1 - 6 for each die and prints out results
+     */
+     public void roll() {
          die1 = (int)(Math.random()*6) + 1;
          die2 = (int)(Math.random()*6) + 1;
-         
+         System.out.println("You rolled a " + die1 + " and a " + die2);
      }
 }
