@@ -1,7 +1,8 @@
 
 /**
  * @author Matthew Guo, Kaveh Mohebbi, Parth Parekh, Harlene Kaur, Kaitlyn Gunadhi 
- * free parking location that gives the player a random amount of money
+ * This class represents the free parking location that gives the player who lands there a 
+ * random amount of money between 0 and 100
  */
 public class FreeParking extends Location{
 
@@ -13,7 +14,7 @@ public class FreeParking extends Location{
 	}
 
 	/**
-	 * @param p Player that gains a 0-100 dollars, determined randomly
+	 * @param p is the Player that gains 0-100 dollars, determined randomly
 	 */
 	@Override
 	public void doAction(Player p) {
