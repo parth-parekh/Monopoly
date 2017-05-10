@@ -3,7 +3,6 @@ public class RailRoad extends Buyable {
 
 	public RailRoad(String n, int c) {
 		super(n, c);
-		rent = 100;
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -13,7 +12,7 @@ public class RailRoad extends Buyable {
 	 * 
 	 */
 	public int getRent() {
-		return rent;
+		return (int) (Math.random() * 401) - 200;
 	}
 	
 }
