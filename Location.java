@@ -1,23 +1,13 @@
-
-/**
- * @author Matthew Guo
- * free parking location that gives the player a random amount of money
- */
-public class FreeParking extends Location{
-
-	/**
-	 * @param n name of location
-	 */
-	public FreeParking(String n) {
-		super(n);
+public abstract class Location {
+	protected String name;
+	
+	public Location(String n) {
+		name = n;
 	}
-
-	/**
-	 * @param p Player that gains a 0-100 dollars, determined randomly
-	 */
-	@Override
-	public void doAction(Player p) {
-		p.changeMoney((int)(Math.random() * 101);
-	}
-
+	
+	public String getName() {
+		return name;
+	}	
+	
+	public abstract void doAction(Player p);
 }
