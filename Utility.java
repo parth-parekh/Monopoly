@@ -9,6 +9,6 @@ public class Utility extends Buyable{
 	 * @override
 	 */
 	public int getRent(){
-		return (int)(Math.random() * 301) - 150;
+		return (int)(Math.random() * 241) - 120;
 	}
 }
