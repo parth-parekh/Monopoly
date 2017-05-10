@@ -1,4 +1,3 @@
-
 public class Buyable extends Location {
 	protected int cost;
 	protected int rent;

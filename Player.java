@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Player {
 	private String name;
 	private int money = 1500;
-	private ArrayList <Buyable> property = new ArrayList <Buyable> ();
+	protected ArrayList <Buyable> property = new ArrayList <Buyable> ();
 	private boolean isBankrupt = false;
 	private int position = 0;
 	private boolean inJail;
@@ -36,7 +36,7 @@ public class Player {
 		return name;
 	}
 	
-	public void newProperty(Property p) {
+	public void newProperty(Buyable p) {
 		property.add(p);
 	}
 	
@@ -55,4 +55,5 @@ public class Player {
 			inJailTurns++;
 		}
 	}
+	
 }

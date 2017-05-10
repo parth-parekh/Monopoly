@@ -1,4 +1,3 @@
-
 public abstract class Location {
 	protected String name;
 	
