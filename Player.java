@@ -52,7 +52,11 @@ public class Player {
 	 * @param p the new property
 	 */
 	public void newProperty(Buyable p) {
-		property.add(p);
+		if(p.getCost > money) {
+			System.out.println("Player: " + name + " does not have enough to buy " + p.name);
+		} else {
+			property.add(p);
+		}
 	}
 	
 	/**
