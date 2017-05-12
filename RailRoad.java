@@ -1,6 +1,6 @@
 
 /**
- * @author Matthew Guo, Kaveh Mohebbi, Parth Parekh, Harlene Kaur, Kaitlyn Gunadhi 
+ * @author Matthew Guo, Kaveh Mohebbi, Parth Parekh, Harlene Kaur, Kaitlyn Gunadhi, Dylan Tran
  * railroad location that can be bought be players
  */
 public class RailRoad extends Buyable {
