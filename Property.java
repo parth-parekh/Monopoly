@@ -2,7 +2,7 @@
  * 
  * This class is extended to each property and is used in the MonopolyBoard class to represent the entire board
  * 
- * @author Parth Parekh
+ * @author Matthew Guo, Kaveh Mohebbi, Parth Parekh, Harlene Kaur, Kaitlyn Gunadhi, Dylan Tran
  *
  */
 public class Property extends Buyable{
