@@ -12,7 +12,8 @@ public class LuxuryTax extends Location {
   * Method that subtracts the luxury tax (75) from the player's balance
   */
   public void doAction(Player p){
-    p.changeMoney(-75);
+	  System.out.println("Luxury Tax: " + p.getName() + " lost $75.");
+	  p.changeMoney(-75);
   }
 }
   

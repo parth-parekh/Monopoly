@@ -7,6 +7,7 @@ public class GoSquare extends Location {
 
 	@Override
 	public void doAction(Player p) {
+		System.out.println(p.getName() + " passed GO.");
 		p.changeMoney(200);
 	}
 	

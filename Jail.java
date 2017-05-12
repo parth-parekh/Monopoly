@@ -18,7 +18,7 @@ public class Jail extends Location{
 	 */
 	@Override
 	public void doAction(Player p) {
-		return;
+		p.inJail();
 	}
 	
 }

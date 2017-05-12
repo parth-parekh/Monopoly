@@ -21,6 +21,7 @@ public class IncomeTax extends Location{
 	 */
 	@Override
 	public void doAction(Player p) {
+		System.out.println("Income Tax: " + p.getName() + " lost $200.");
 		p.changeMoney(-200);
 	}
 	

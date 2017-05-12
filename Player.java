@@ -31,7 +31,7 @@ public class Player {
 	 */
 	public void changeMoney(int value) {
 		money += value;
-		System.out.println(name + " now has $" + money);
+		System.out.println(name + " now has $" + money + ".");
 	}
 	
 	/** returns amount of money owned by player
@@ -52,7 +52,7 @@ public class Player {
 	 * @param p the new property
 	 */
 	public void newProperty(Buyable p) {
-		if(p.getCost > money) {
+		if(p.getCost() > money) {
 			System.out.println("Player: " + name + " does not have enough to buy " + p.name);
 		} else {
 			property.add(p);

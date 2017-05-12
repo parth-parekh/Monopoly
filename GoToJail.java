@@ -4,7 +4,7 @@
 */
 public class GoToJail extends Location{
 	/**
-	* Constructor that calls the super construcor to initialize the name
+	* Constructor that calls the super constructor to initialize the name
 	*/
 	public GoToJail(String n) {
 		super(n);

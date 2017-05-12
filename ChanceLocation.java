@@ -28,7 +28,7 @@ public class ChanceLocation extends Location {
 		if (x >= 0) {
 			System.out.println("Chance: " + p.getName() + " won $" + x + ".");
 		} else {
-			System.out.println("Chance: " + p.getName() + " lost $" + x + ".");
+			System.out.println("Chance: " + p.getName() + " lost $" + Math.abs(x) + ".");
 		}
 		p.changeMoney(x);
 	}

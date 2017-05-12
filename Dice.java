@@ -18,6 +18,6 @@ public class Dice {
      public void roll() {
          die1 = (int)(Math.random()*6) + 1;
          die2 = (int)(Math.random()*6) + 1;
-         System.out.println("You rolled a " + die1 + " and a " + die2);
+         System.out.println("You rolled a " + die1 + " and a " + die2 + ".");
      }
 }

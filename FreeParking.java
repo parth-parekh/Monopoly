@@ -18,7 +18,10 @@ public class FreeParking extends Location{
 	 */
 	@Override
 	public void doAction(Player p) {
-		p.changeMoney((int)(Math.random() * 101);
+		int x = (int)(Math.random() * 101);
+		System.out.println("Free Parking: " + p.getName() + " won $" + x
+				+ ".");
+		p.changeMoney(x);
 	}
 
 }
