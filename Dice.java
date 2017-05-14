@@ -15,9 +15,9 @@ public class Dice {
      * Method that simulates one  and generates
      * a number 1 - 6 for each die and prints out results
      */
-     public void roll() {
+     public int roll() {
          die1 = (int)(Math.random()*6) + 1;
          die2 = (int)(Math.random()*6) + 1;
-         System.out.println("You rolled a " + die1 + " and a " + die2 + ".");
+         return die1 + die2;
      }
 }

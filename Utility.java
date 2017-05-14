@@ -1,8 +1,8 @@
 
 public class Utility extends Buyable{
 	private int rent;
-	public Utility (String n, int c){
-		super(n,c);
+	public Utility (String n, int c, int pos){
+		super(n, c, pos);
 	}
 	
 	
@@ -10,5 +10,15 @@ public class Utility extends Buyable{
 	
 	public int getRent(){
 		return (int)(Math.random() * 121);
+	}
+	
+	/**
+	 * 
+	 * @param p - the player who bought the property
+	 * 
+	 */
+	public void buy (Player p) {
+		isOwned = true;
+		Owner = p;
 	}
 }

@@ -1,13 +1,20 @@
+
 public abstract class Location {
 	protected String name;
+	protected int location;
 	
-	public Location(String n) {
+	public Location(String n, int pos) {
 		name = n;
+		location = pos;
 	}
 	
 	public String getName() {
 		return name;
 	}	
 	
-	public abstract void doAction(Player p);
+	public int getLocation() {
+		return location;
+	}
+	
+	public abstract String doAction(Player p);
 }

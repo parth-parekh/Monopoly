@@ -1,69 +1,82 @@
 /**
- * @author Matthew Guo
+ * @author Parth Parekh
  * This class holds a buyable location on the board,
  * and holds a buy cost, rent cost, name of Owner, and own status
+ * 
  */
 public class Buyable extends Location {
 	protected int cost;
 	protected int rent;
-	protected String Owner;
+	protected Player Owner;
 	protected boolean isOwned;
 	
 	/**
-	 * @param n name of the buyable
-	 * @param c cost of the buyable
+	 * 
+	 * @param n - name of the buyable
+	 * @param c - cost of the buyable
+	 * @param pos - position of the buyable in a linear monopoly
+	 * 
 	 */
-	public Buyable(String n, int c) {
-		super(n);
+	public Buyable(String n, int c, int pos) {
+		super(n, pos);
 		cost = c;
 		isOwned = false;
+		rent = cost/10 -4;
 	}
 	
 	/**
-	 * @return cost of buyable
+	 * 
+	 * @return cost of the property
 	 */
 	public int getCost() {
 		return cost;
 	}
 	
 	/**
-	 * @param cost new cost for buyable
-	 */
-	public void setCost(int cost) {
-		this.cost = cost;
-	}
-	
-	/**
-	 * @return rent cost of buyable
+	 * 
+	 * @return rent of the property
 	 */
 	public int getRent() {
 		return rent;
 	}
 	
 	/**
-	 * returns specific message depending on if buyable is owned or not
+	 * 
+	 * @return if the property is owned or not
+	 * 
 	 */
-	public void getIsOwned() {
+	public String getIsOwned(Player p) {
 		if(isOwned) {
-			System.out.println(name + " is owned by " + Owner + ".");
+			if(p == Owner) {
+				return ("Current Player owns " + name);
+			} else {
+				payRent(p);
+				if(p.getMoney() < 0) {
+					p.isBankrupt = true;
+				}
+				return (name + " is owned by " + Owner.getName() + ". Rent payed: " + getRent());
+			}
 		} else {
-			System.out.println(name + " has not been bought.");
+			return (name + " has not been bought.");
 		}
 	}
 	
 	/**
-	 * @param p Player who bought the buyable
+	 * 
+	 * @param p - the player who bought the property
+	 * 
 	 */
-	public void bought(Player p) {
+	public void buy(Player p) {
 		isOwned = true;
-		Owner = p.getName();
+		Owner = p;
 	}
 
-	/**
-	 * @param p Player that landed on the buyable
-	 */
-	public void doAction(Player p) {
-		return;
+	public void payRent(Player p) {
+		p.changeMoney(-getRent());
+		
+	}
+	public String doAction(Player p) {
+		return getIsOwned(p);
 	}
 
 }

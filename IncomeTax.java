@@ -12,17 +12,18 @@ public class IncomeTax extends Location{
 	 * @param n - represents the name of the location to be placed in the array in MonopolyBoard
 	 * 
 	 */
-	public IncomeTax(String n) {
-		super(n);
+	public IncomeTax(String n, int pos) {
+		super(n, pos);
 	}
 
 	/**
 	 * @param p - This player loses 200 dollars
 	 */
 	@Override
-	public void doAction(Player p) {
-		System.out.println("Income Tax: " + p.getName() + " lost $200.");
+	public String doAction(Player p) {
 		p.changeMoney(-200);
+		return ("Income Tax: " + p.getName() + " lost $200.");
+
 	}
 	
 	

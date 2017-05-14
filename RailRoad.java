@@ -1,26 +1,36 @@
 
-/**
- * @author Matthew Guo, Kaveh Mohebbi, Parth Parekh, Harlene Kaur, Kaitlyn Gunadhi, Dylan Tran
- * railroad location that can be bought be players
- */
 public class RailRoad extends Buyable {
 
-	/** Constructor that sets the name and cost
-	 * @param n name
-	 * @param c cost
+	
+	/**
+	 * 
+	 * @param n - name of the rr
+	 * @param c - cost of the rr
+	 * @param pos - position of the rr in a linear monopoly
+	 * 
 	 */
-	public RailRoad(String n, int c) {
-		super(n, c);
-		
+	public RailRoad(String n, int c, int pos) {
+		super(n, c, pos);
+		// TODO Auto-generated constructor stub
 	}
 	
 	/**
-	 * returns the rent cost of the railroad
-	 * @return cost
+	 *
+	 * @return the rent of the railroad
 	 * 
 	 */
 	public int getRent() {
-		return (int) (Math.random() * 401) - 200;
+		return 25;
+	}
+	
+	/**
+	 * 
+	 * @param p - the player who bought the property
+	 * 
+	 */
+	public void buy (Player p) {
+		isOwned = true;
+		Owner = p;
 	}
 	
 }

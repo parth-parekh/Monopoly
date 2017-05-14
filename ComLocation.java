@@ -6,8 +6,8 @@ public class ComLocation extends Location {
 	 * @param n
 	 *            - name
 	 */
-	public ComLocation(String n) {
-		super(n);
+	public ComLocation(String n, int pos) {
+		super(n, pos);
 	}
 
 	/**
@@ -23,11 +23,10 @@ public class ComLocation extends Location {
 	 * Adds value to player's money
 	 */
 	@Override
-	public void doAction(Player p) {
+	public String doAction(Player p) {
 		int x = getValue();
-		System.out.println("Community Chest: " + p.getName() + " won $" + x
-				+ ".");
 		p.changeMoney(x);
+		return ("Community Chest: " + p.getName() + " won $" + x + ".");
 	}
 
 }

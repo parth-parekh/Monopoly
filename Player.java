@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.*;
 
 /**
  * 
@@ -11,12 +12,13 @@ import java.util.ArrayList;
 
 public class Player {
 	private String name;
-	private int money = 1500;
+	private int money = 500;
 	protected ArrayList <Buyable> property = new ArrayList <Buyable> ();
-	private boolean isBankrupt = false;
-	private int position = 0;
-	private boolean inJail;
-	private int inJailTurns;
+	protected boolean isBankrupt = false;
+	protected int position = 0;
+	protected boolean inJail = false;;
+	protected int inJailTurns = 0;
+	Iterator itr = property.iterator();
 
 	
 	/** Constructor that sets name of player
@@ -29,9 +31,12 @@ public class Player {
 	/** Changes the amount of money owned by the player
 	 * @param value value of money added to the player
 	 */
-	public void changeMoney(int value) {
+	public String changeMoney(int value) {
 		money += value;
-		System.out.println(name + " now has $" + money + ".");
+		if (money < 0) {
+			isBankrupt = true;
+		}
+		return (name + " now has $" + money + ".");
 	}
 	
 	/** returns amount of money owned by player
@@ -51,19 +56,29 @@ public class Player {
 	/** gives the player a new property
 	 * @param p the new property
 	 */
-	public void newProperty(Buyable p) {
+	public String newProperty(Buyable p) {
 		if(p.getCost() > money) {
-			System.out.println("Player: " + name + " does not have enough to buy " + p.name);
+			return ("Player: " + name + " does not have enough to buy " + p.name);
 		} else {
 			property.add(p);
+			money -= p.cost;
+			return ("Player: " + name + " bought " + p.name);
 		}
 	}
 	
 	/**
 	 * prints the player's name, money, and properties
 	 */
-	public void getPlayerInformation() {
-		System.out.println("Player: " + name + " has $" + money + " and owns " + property.toString());
+	public String getPlayerInformation() {
+		String x = "Player: " + name + " has $" + money + " and owns ";
+		for(int i = 0; i < property.size(); i++) {
+			if (i == property.size() - 1) {
+				x += property.get(i).getName();
+			} else {
+				x += property.get(i).getName() + ", ";
+			}
+		}
+		return x;
 	}
 	
 	/**
@@ -76,12 +91,12 @@ public class Player {
 	/**
 	 * Checks if the player should stay in jail. Player leaves jail after two turns
 	 */
-	public void inJail() {
-		if(inJailTurns == 2) {
-			inJail = false;
-		} else {
-			inJailTurns++;
-		}
+	public boolean inJail() {
+		inJailTurns++;
+		return inJail;
 	}
 	
+	public int inJailTurns(){
+		return inJailTurns;
+	}
 }

@@ -6,8 +6,8 @@ public class ChanceLocation extends Location {
 	 * @param n
 	 *            - name
 	 */
-	public ChanceLocation(String n) {
-		super(n);
+	public ChanceLocation(String n, int pos) {
+		super(n, pos);
 	}
 
 	/**
@@ -23,14 +23,15 @@ public class ChanceLocation extends Location {
 	 * Adds or subtracts value from player's money
 	 */
 	@Override
-	public void doAction(Player p) {
+	public String doAction(Player p) {
 		int x = getValue();
-		if (x >= 0) {
-			System.out.println("Chance: " + p.getName() + " won $" + x + ".");
-		} else {
-			System.out.println("Chance: " + p.getName() + " lost $" + Math.abs(x) + ".");
-		}
 		p.changeMoney(x);
+		if (x >= 0) {
+			return ("Chance: " + p.getName() + " won $" + x + ".");
+		} else {
+			return ("Chance: " + p.getName() + " lost $" + Math.abs(x) + ".");
+		}
+		
 	}
 
 }

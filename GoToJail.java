@@ -1,22 +1,15 @@
-/**
-* Class that represets a go to jail location
-* that sends the player to jail
-*/
+
 public class GoToJail extends Location{
-	/**
-	* Constructor that calls the super constructor to initialize the name
-	*/
-	public GoToJail(String n) {
-		super(n);
+
+	public GoToJail(String n, int pos) {
+		super(n, pos);
 	}
-	
-	/**
-	* Sends the player to jail by calling the go to jail method of the player
-	* that sets jail status to true
-	*/
+
 	@Override
-	public void doAction(Player p) {
+	public String doAction(Player p) {
 		p.goToJail();
+		p.position = 10;
+		return "Player " + p.getName() + " was sent to jail.";
 	}
 
 }
