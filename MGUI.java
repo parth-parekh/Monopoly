@@ -4,15 +4,18 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.util.*;
 
 /**
  * 
- * @author User
+ * @author Parth Parekh
  *
  */
+@SuppressWarnings("serial")
 public class MGUI extends JFrame implements ActionListener {
 		
+	/**
+	 * 
+	 */
 	BufferedImage monopolyBoard;
 	BufferedImage playerOneToken;
 	BufferedImage playerTwoToken;
@@ -315,5 +318,11 @@ public class MGUI extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		@SuppressWarnings("unused")
+		MGUI game = new MGUI();
 	}
 }

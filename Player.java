@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.*;
 
 /**
  * 
@@ -18,7 +17,6 @@ public class Player {
 	protected int position = 0;
 	protected boolean inJail = false;;
 	protected int inJailTurns = 0;
-	Iterator itr = property.iterator();
 
 	
 	/** Constructor that sets name of player

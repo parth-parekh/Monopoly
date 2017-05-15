@@ -6,8 +6,6 @@
  *
  */
 public class Property extends Buyable{
-	private int houses;
-	private int hotel;
 	
 	/**
 	 * 

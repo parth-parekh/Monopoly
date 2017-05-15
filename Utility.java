@@ -1,13 +1,12 @@
 
 public class Utility extends Buyable{
-	private int rent;
+	
 	public Utility (String n, int c, int pos){
 		super(n, c, pos);
 	}
 	
 	
 	@Override
-	
 	public int getRent(){
 		return (int)(Math.random() * 121);
 	}
