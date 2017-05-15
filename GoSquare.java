@@ -1,26 +1,37 @@
-
 /**
  * @author Parth Parekh, Matthew Guo, Harlene Kaur, Kaveh Mohebbi, Dylan Tran, Kaitlyn Gunadhi
- * The class is the Go square on the Monopoly board that gives the player $200
+ * The abstract class defines the name, position, and some methods of all location classes
  */
-public class GoSquare extends Location {
-
-	/** Constructor that sets the name and position of the location
+public abstract class Location {
+	protected String name;
+	protected int location;
+	
+	/** sets the name and position of the location
 	 * @param n name
-	 * @param pos position
+	 * @param pos position 
 	 */
-	public GoSquare(String n, int pos) {
-		super(n, pos);
-	}
-
-	/** gives the player that passed it $200
-	 * @param p player
-	 * @return string that states which player passed go and gained $200
-	 */
-	@Override
-	public String doAction(Player p) {
-		p.changeMoney(200);
-		return "Player " + p.getName() + " passed Go and collected $200!";
+	public Location(String n, int pos) {
+		name = n;
+		location = pos;
 	}
 	
+	/** returns the name of the location
+	 * @return name
+	 */
+	public String getName() {
+		return name;
+	}	
+	
+	/** returns the position of the location
+	 * @return position
+	 */
+	public int getLocation() {
+		return location;
+	}
+	
+	/** does a certain action to a player
+	 * @param p player
+	 * @return string that describes the action
+	 */
+	public abstract String doAction(Player p);
 }
